@@ -5,6 +5,7 @@ import { sanityFetch } from '@/lib/sanity/client'
 import { ARTICLE_BY_SLUG } from '@/lib/sanity/queries'
 import { getImageUrl } from '@/lib/sanity/image'
 import { PortableText } from '@portabletext/react'
+import { CopyBtn } from '@/components/ui/CopyBtn'
 
 export const revalidate = 60
 export function generateStaticParams() { return [] }
@@ -111,18 +112,6 @@ const ptComponents = {
   },
 }
 
-function CopyBtn({ text }: { text: string }) {
-  return (
-    <button
-      onClick={async () => {
-        await navigator.clipboard.writeText(text)
-      }}
-      style={{ background: 'rgba(255,255,255,.08)', border: 'none', borderRadius: 6, padding: '4px 10px', color: '#94a3b8', fontSize: 12, cursor: 'pointer', whiteSpace: 'nowrap' }}
-    >
-      Copy
-    </button>
-  )
-}
 
 export default async function Page({ params }: P) {
   const { os, category, slug } = await params
