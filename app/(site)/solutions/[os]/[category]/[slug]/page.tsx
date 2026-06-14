@@ -86,6 +86,23 @@ const ptComponents = {
         </div>
       )
     },
+    table: ({ value }: any) => (
+  <div style={{ overflowX: 'auto', margin: '1.5rem 0' }}>
+    <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 14 }}>
+      <tbody>
+        {value.rows?.map((row: any, i: number) => (
+          <tr key={i} style={{ borderBottom: '1px solid rgba(255,255,255,.08)', background: i === 0 ? 'rgba(59,130,246,.08)' : 'transparent' }}>
+            {row.cells?.map((cell: string, j: number) => (
+              i === 0
+                ? <th key={j} style={{ padding: '10px 14px', color: '#f1f5f9', fontWeight: 600, textAlign: 'left', borderRight: '1px solid rgba(255,255,255,.06)' }}>{cell}</th>
+                : <td key={j} style={{ padding: '10px 14px', color: '#94a3b8', borderRight: '1px solid rgba(255,255,255,.06)' }}>{cell}</td>
+            ))}
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+),
     articleImage: ({ value }: any) => value?.asset ? (
       <figure style={{ margin: '1.5rem 0' }}>
         <img src={getImageUrl(value.asset, 800)} alt={value.altText || ''} style={{ width: '100%', borderRadius: 8, border: '1px solid rgba(255,255,255,.08)' }} loading="lazy" />
