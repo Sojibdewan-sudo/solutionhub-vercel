@@ -29,6 +29,24 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <Footer />
           </div>
         </ThemeProvider>
+{/* Google Translate Widget */}
+<div id="google_translate_element" style={{ position: 'fixed', bottom: '20px', right: '20px', zIndex: 9999 }} />
+<script
+  dangerouslySetInnerHTML={{
+    __html: `
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+          pageLanguage: 'en',
+          includedLanguages: 'bn,hi,ar,zh-CN,fr,de,es,pt,ru,ja,ko,tr,ur',
+          layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+          autoDisplay: false
+        }, 'google_translate_element');
+      }
+    `,
+  }}
+/>
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" />
+
       </body>
     </html>
   )
