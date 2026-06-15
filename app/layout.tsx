@@ -3,7 +3,7 @@ import './globals.css'
 import { Navbar } from '@/components/layout/Navbar'
 import { Footer } from '@/components/layout/Footer'
 import { ThemeProvider } from '@/components/layout/ThemeProvider'
-import { Analytics } from '@vercel/analytics/react'
+import { Analytics } from "@vercel/analytics/next"
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://solutionhub.aivoro.site'
 
@@ -30,26 +30,24 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <Footer />
           </div>
         </ThemeProvider>
+{/* Google Translate Widget */}
+<div id="google_translate_element" style={{ position: 'fixed', bottom: '20px', right: '20px', zIndex: 9999 }} />
+<script
+  dangerouslySetInnerHTML={{
+    __html: `
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+          pageLanguage: 'en',
+          includedLanguages: 'bn,en,hi,ar,zh-CN,fr,de,es,pt,ru,ja,ko,tr,ur,id,ms,th,vi,fa,pl,nl,it,sv,he,sw,tl,el,hu,cs,ro,da,fi,no,uk,ca,hr,lt,lv,sl,sr,sk'
+          layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+          autoDisplay: false
+        }, 'google_translate_element');
+      }
+    `,
+  }}
+/>
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" />
 
-        {/* Google Translate Widget */}
-        <div id="google_translate_element" style={{ position: 'fixed', bottom: '20px', right: '20px', zIndex: 9999 }} />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              function googleTranslateElementInit() {
-                new google.translate.TranslateElement({
-                  pageLanguage: 'en',
-                  includedLanguages: 'bn,en,hi,ar,zh-CN,fr,de,es,pt,ru,ja,ko,tr,ur,id,ms,th,vi,fa,pl,nl,it,sv,he,sw,tl,el,hu,cs,ro,da,fi,no,uk,ca,hr,lt,lv,sl,sr,sk',
-                  layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-                  autoDisplay: false
-                }, 'google_translate_element');
-              }
-            `,
-          }}
-        />
-        <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" />
-
-        <Analytics />
       </body>
     </html>
   )
