@@ -3,7 +3,6 @@ import './globals.css'
 import { Navbar } from '@/components/layout/Navbar'
 import { Footer } from '@/components/layout/Footer'
 import { ThemeProvider } from '@/components/layout/ThemeProvider'
-import { Analytics } from "@vercel/analytics/next"
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://solutionhub.aivoro.site'
 
