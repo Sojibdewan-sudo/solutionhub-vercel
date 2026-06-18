@@ -46,7 +46,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   }}
 />
 <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" />
-
       </body>
     </html>
   )

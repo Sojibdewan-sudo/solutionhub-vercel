@@ -2,9 +2,9 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 export const metadata: Metadata = { title: 'Contact Us', description: 'Get in touch with Solution Hub.' }
 const C = [
-  {icon:'📧',t:'General Inquiries',d:'Questions, feedback, and general contact.',e:'contact@solutionhub.com'},
+  
   {icon:'🐛',t:'Report an Error',d:'Found incorrect information in a guide?',e:'errors@solutionhub.com'},
-  {icon:'🤝',t:'Partnership',d:'Business and partnership inquiries.',e:'partner@solutionhub.com'},
+ 
 ]
 export default function Page() {
   return (
