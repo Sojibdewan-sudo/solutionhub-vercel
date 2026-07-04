@@ -46,6 +46,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   }}
 />
 <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" />
+
+//#endregion
+<script async="async" data-cfasync="false" src="https://pl30199094.effectivecpmnetwork.com/37239f77d9eebf7980edae69d2426b32/invoke.js"></script>
+<div id="container-37239f77d9eebf7980edae69d2426b32"></div>
+
       </body>
     </html>
   )
